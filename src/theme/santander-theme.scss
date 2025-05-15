@@ -1,0 +1,19 @@
+@use '../../node_modules/@angular/material' as mat;
+
+$my-primary: mat.define-palette(mat.$red-palette);
+$my-accent: mat.define-palette(mat.$pink-palette);
+
+$my-color-config: (
+  primary: $my-primary,
+  accent: $my-accent,
+);
+
+$my-theme: mat.define-light-theme((
+  color: $my-color-config,
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// 4. Aplicar el tema
+@include mat.all-component-themes($my-theme);
+
