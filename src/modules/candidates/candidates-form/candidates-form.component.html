@@ -4,20 +4,20 @@
     (ngSubmit)="onSubmit()"
     class="w-full max-w-md p-6 bg-white rounded-lg shadow space-y-6"
   >
-    <h2 class="text-xl font-semibold text-center text-gray-800">Alta de Candidato</h2>
+    <h2 class="text-xl font-semibold text-center text-gray-800">{{ 'CANDIDATES.ADD_TITLE' | translate }}</h2>
 
     <mat-form-field appearance="fill" class="w-full">
-      <mat-label>Nombre</mat-label>
+      <mat-label>{{ 'CANDIDATES.NAME' | translate }}</mat-label>
       <input matInput formControlName="name" placeholder="Ej. Juan" />
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="w-full">
-      <mat-label>Apellido</mat-label>
+      <mat-label>{{ 'CANDIDATES.SURNAME' | translate }}</mat-label>
       <input matInput formControlName="surname" placeholder="Ej. Pérez" />
     </mat-form-field>
 
     <div class="w-full">
-      <label class="block mb-1 text-sm font-medium text-gray-700">Archivo Excel *</label>
+      <label class="block mb-1 text-sm font-medium text-gray-700">{{ 'CANDIDATES.EXCEL' | translate }}</label>
       <input
         type="file"
         (change)="onFileSelected($event)"
@@ -33,7 +33,7 @@
       [disabled]="candidateForm.invalid"
       class="w-full"
     >
-      Enviar
+      {{ "CORE.SEND" | translate }}
     </button>
   </form>
 </div>

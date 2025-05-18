@@ -1,8 +1,8 @@
 <div class="p-6 max-w-6xl mx-auto">
   <div class="flex justify-between items-center mb-4">
     <h2 class="text-2xl font-semibold text-gray-800">Listado de Candidatos</h2>
-    <button mat-raised-button color="primary" [routerLink]="['/candidates/add']">
-      Añadir
+    <button mat-raised-button color="primary" [routerLink]="APP_ROUTES.CANDIDATES_ADD">
+      {{ 'CANDIDATES.ADD' | translate }}
     </button>
   </div>
 
@@ -10,32 +10,32 @@
 
     <!-- Nombre -->
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <th mat-header-cell *matHeaderCellDef> {{ 'CANDIDATES.NAME' | translate }} </th>
       <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
     </ng-container>
 
     <!-- Apellido -->
     <ng-container matColumnDef="surname">
-      <th mat-header-cell *matHeaderCellDef> Apellido </th>
+      <th mat-header-cell *matHeaderCellDef> {{ 'CANDIDATES.SURNAME' | translate }} </th>
       <td mat-cell *matCellDef="let element"> {{ element.surname }} </td>
     </ng-container>
 
     <!-- Seniority -->
     <ng-container matColumnDef="seniority">
-      <th mat-header-cell *matHeaderCellDef> Seniority </th>
+      <th mat-header-cell *matHeaderCellDef> {{ 'CANDIDATES.SENIORITY' | translate }} </th>
       <td mat-cell *matCellDef="let element"> {{ element.seniority }} </td>
     </ng-container>
 
     <!-- Años -->
     <ng-container matColumnDef="years">
-      <th mat-header-cell *matHeaderCellDef> Años </th>
+      <th mat-header-cell *matHeaderCellDef> {{ 'CANDIDATES.YEARS' | translate }} </th>
       <td mat-cell *matCellDef="let element"> {{ element.years }} </td>
     </ng-container>
 
     <!-- Disponibilidad -->
     <ng-container matColumnDef="availability">
-      <th mat-header-cell *matHeaderCellDef> Disponible </th>
-      <td mat-cell *matCellDef="let element"> {{ element.availability ? 'Sí' : 'No' }} </td>
+      <th mat-header-cell *matHeaderCellDef> {{ 'CANDIDATES.AVAILABILITY' | translate }} </th>
+      <td mat-cell *matCellDef="let element"> {{ element.availability ? ('CORE.YES' | translate) : ('CORE.NO' | translate) }} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

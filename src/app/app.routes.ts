@@ -7,8 +7,6 @@ export const routes: Routes = [
 
   { path: 'candidates', component: CandidatesListComponent },
 
-  { path: 'candidates/add', component: CandidatesFormComponent },
-
-  { path: 'candidates/:id', component: CandidatesFormComponent },
+  { path: 'candidates/add', component: CandidatesFormComponent }
 ];
   

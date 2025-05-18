@@ -3,6 +3,9 @@ import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angula
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button'
+import { CandidateService } from '../../../services/candidate.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-candidates-form',
@@ -11,7 +14,9 @@ import { MatButtonModule } from '@angular/material/button'
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    TranslateModule,
+    CommonModule
   ],
   templateUrl: './candidates-form.component.html',
   styleUrl: './candidates-form.component.scss'
@@ -20,7 +25,11 @@ export class CandidatesFormComponent {
   candidateForm: FormGroup;
   excelFile: File | null = null;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private readonly candidateService: CandidateService
+  )
+  {
     this.candidateForm = this.fb.group({
       name: ['', Validators.required],
       surname: ['', Validators.required],
@@ -42,9 +51,15 @@ export class CandidatesFormComponent {
       formData.append('name', this.candidateForm.get('name')?.value);
       formData.append('surname', this.candidateForm.get('surname')?.value);
       formData.append('file', this.excelFile);
-
-      // Aquí iría la llamada al servicio
-      console.log('Formulario enviado:', formData);
+  
+      this.candidateService.submitCandidate(formData).subscribe({
+        next: (response) => {
+          this.candidateService.saveAndRedirect(response);
+        },
+        error: (err) => {
+          console.error('Error al enviar candidato:', err);
+        }
+      });
     }
-  }
+  }  
 }

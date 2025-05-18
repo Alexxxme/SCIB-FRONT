@@ -4,6 +4,8 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatTableModule } from '@angular/material/table'
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { APP_ROUTES } from '../../../core/app.routes.constants';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-candidates-list',
@@ -14,12 +16,15 @@ import { RouterModule } from '@angular/router';
     MatTableModule,
     MatButtonModule,
     RouterModule,
-    CommonModule
+    CommonModule,
+    TranslateModule
   ]
 })
 export class CandidatesListComponent {
   displayedColumns: string[] = ['name', 'surname', 'seniority', 'years', 'availability'];
   candidates: any[] = [];
+
+  public readonly APP_ROUTES = APP_ROUTES;
 
   constructor(private candidateService: CandidateService) {}
 

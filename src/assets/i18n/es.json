@@ -1,0 +1,18 @@
+{
+  "CORE": {
+    "YES": "Sí",
+    "NO": "No",
+    "SEND": "Enviar"
+  },
+  "CANDIDATES": {
+    "TITLE": "Listado de Candidatos",
+    "ADD": "Añadir",
+    "NAME": "Nombre",
+    "SURNAME": "Apellido",
+    "SENIORITY": "Seniority",
+    "YEARS": "Años de experiencia",
+    "AVAILABILITY": "Disponible",
+    "EXCEL": "Archivo Excel *",
+    "ADD_TITLE": "Alta de Candidato"
+  }
+}
