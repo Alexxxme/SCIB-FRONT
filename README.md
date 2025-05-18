@@ -1,7 +1,24 @@
-<<<<<<< HEAD
 # SCIB-FRONT
 SCIB Front
+
+Frontend for the SCIB Technical Test – Banco Santander.
+
+This application is built with **Angular 17**, **Angular Material**, and **TailwindCSS**. It connects to a **NestJS backend** and allows uploading an Excel file with candidate data.
+
 =======
+
+## Stack
+
+- Angular 17 (standalone components)
+- Angular Material
+- TailwindCSS
+- ngx-translate (i18n)
+- Reactive Forms
+- LocalStorage for persistence
+- REST API integration with NestJS
+
+=======
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
@@ -29,4 +46,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
->>>>>>> 8542628 (initial commit)
